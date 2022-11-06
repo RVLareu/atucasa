@@ -18,7 +18,8 @@ Si se agrega una pantalla, debe incluirse en App.js como componente de navegacio
 ## Para ver aplicacion en celular
 
 1. Descargar **Expo Go** en celular
-2. En carpeta raiz del proyecto `npm start`
+2. En raiz del proyecto `npm install`
+2. En raiz del proyecto `npm start`
 3. escanear QR o ingresar manualmente url en la aplicación Expo Go
 
 Ante error, ver [docu oficial](https://reactnative.dev/docs/)
