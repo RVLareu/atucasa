@@ -6,7 +6,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 const image = { uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ObeliscoBA2015.2.jpg/1200px-ObeliscoBA2015.2.jpg" };
 
-const MainScreen = ({navigation, route}) => {
+const Profile = ({navigation, route}) => {
   return (
     <ScrollView style={styles.scrollview}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
@@ -15,10 +15,10 @@ const MainScreen = ({navigation, route}) => {
           style={styles.avatar}
           image={{ uri: "https://mui.com/static/images/avatar/1.jpg" }}
         />
+      <Text variant="h3" style={styles.text}>Jhon Doe</Text>
       </ImageBackground>
 
       <Divider leadingInset={16} />
-      <Text variant="h3" style={styles.text}>Román Vázquez Lareu</Text>
       <Text variant="s1" style={styles.textSub}>Carpintero</Text>
       <HStack fill center spacing={25} marginTop={'5%'}>
         <VStack center>
@@ -31,7 +31,7 @@ const MainScreen = ({navigation, route}) => {
           <IconComponentProvider IconComponent={MaterialCommunityIcons}>
             <Icon name="star" size={70} color="#188098"/>
           </IconComponentProvider>
-          <Text style={styles.star}>3</Text>
+          <Text style={styles.star}>3.3</Text>
         </VStack>
         <VStack center>
           <IconComponentProvider IconComponent={MaterialCommunityIcons}>
@@ -61,6 +61,19 @@ const MainScreen = ({navigation, route}) => {
         label="Llamar"
         color="#1bb2cb"
         style={styles.fab}
+        />
+        <FAB
+        variant="extended"
+        icon={props => <IconComponentProvider IconComponent={MaterialCommunityIcons}>
+                          <Icon name="account-star" {...props} />
+                          </IconComponentProvider>
+                          }
+        label="Ver Calificaciones"
+        color="#1bb2cb"
+        style={styles.fab}
+        onPress={() =>
+          navigation.navigate('Ratings')
+        }
         />
       </VStack>
     </ScrollView>
@@ -115,4 +128,4 @@ const styles = StyleSheet.create({
     width: '80%'
   }
 });
-export default MainScreen;
+export default Profile;
