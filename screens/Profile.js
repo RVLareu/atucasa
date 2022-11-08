@@ -20,7 +20,7 @@ const Profile = ({navigation, route}) => {
 
       <Divider leadingInset={16} />
       <Text variant="s1" style={styles.textSub}>Carpintero</Text>
-      <HStack fill center spacing={25} marginTop={'5%'}>
+      <HStack  center spacing={25} marginTop={'5%'}>
         <VStack center>
           <IconComponentProvider IconComponent={MaterialCommunityIcons}>
             <Icon name="hammer" size={70} color="#188098"/>
@@ -51,16 +51,20 @@ const Profile = ({navigation, route}) => {
         label="Enviar un Mensaje"
         color="#1bb2cb"
         style={styles.fab}
+        onPress={() =>
+          navigation.navigate('Chat')
+        }                
         />
         <FAB
         variant="extended"
         icon={props => <IconComponentProvider IconComponent={MaterialCommunityIcons}>
-                          <Icon name="phone" {...props} />
+                          <Icon name="calendar" {...props} />
                           </IconComponentProvider>
                           }
-        label="Llamar"
+        label="Agendar cita"
         color="#1bb2cb"
         style={styles.fab}
+
         />
         <FAB
         variant="extended"
@@ -84,7 +88,7 @@ const Profile = ({navigation, route}) => {
 
 const styles = StyleSheet.create({
   scrollview: {
-    marginTop: '8%',
+    // marginTop: '8%',
     backgroundColor: "#0f3648",
   },
   avatar: {
